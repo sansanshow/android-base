@@ -61,6 +61,10 @@
             android:name=".drawable.ClipDrawableActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".drawable.CustomerDrawableActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <!-- 高德地图 AMapActivity-->
         <activity
             android:name=".map.AMapActivity"

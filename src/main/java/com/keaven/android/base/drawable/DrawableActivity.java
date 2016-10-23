@@ -65,4 +65,11 @@ public class DrawableActivity extends Activity {
         startActivity(new Intent(this, ClipDrawableActivity.class));
 
     }
+    /**
+     * 用来裁剪的Drawable
+     */
+    public void customerDrawable(View view) {
+        startActivity(new Intent(this, CustomerDrawableActivity.class));
+
+    }
 }
