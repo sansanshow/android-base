@@ -9,6 +9,10 @@ import android.widget.ImageView;
 import com.keaven.android.base.R;
 
 /**
+ * 自定义Drawable
+ * 演示： 1，圆形
+ *        2，圆角矩形
+ *
  * Created by a-keaven on 2016/10/23.
  */
 public class CustomerDrawableActivity extends Activity {
