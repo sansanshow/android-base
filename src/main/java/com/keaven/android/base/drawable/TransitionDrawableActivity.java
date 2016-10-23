@@ -9,7 +9,9 @@ import android.widget.ImageView;
 import com.keaven.android.base.R;
 
 /**
- * BitmapDrawable 的简单使用
+ * TransitionDrawable 的简单使用
+ * TransitionDrawable是LayerDrawable的子类，不过它只负责管理两层drawable，
+ * 并且提供了一个透明变化的动画，可以从议程drawable过渡到另外一层drawable的动画效果。
  * Created by a-keaven on 2016/10/23.
  */
 public class TransitionDrawableActivity extends Activity{

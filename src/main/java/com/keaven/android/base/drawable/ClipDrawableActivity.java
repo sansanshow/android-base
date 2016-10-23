@@ -10,6 +10,7 @@ import com.keaven.android.base.R;
 
 /**
  * ClipDrawable 的简单使用
+ * 带裁剪功能Drawable
  * Created by a-keaven on 2016/10/23.
  */
 public class ClipDrawableActivity extends Activity {
