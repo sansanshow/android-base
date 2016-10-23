@@ -29,6 +29,6 @@ public class TransitionDrawableActivity extends Activity{
     }
     public void doMen(View view){
         TransitionDrawable drawable = (TransitionDrawable) mImageView.getDrawable();
-        drawable.resetTransition();
+        drawable.reverseTransition(2000);
     }
 }
