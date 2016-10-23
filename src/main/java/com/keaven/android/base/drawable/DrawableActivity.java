@@ -18,14 +18,51 @@ public class DrawableActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawable);
     }
-    public void bitmapDrawable(View view){
-        startActivity(new Intent(this,BitmapDrawableActivity.class));
+
+    public void bitmapDrawable(View view) {
+        startActivity(new Intent(this, BitmapDrawableActivity.class));
     }
-    public void layerDrawable(View view){
-        startActivity(new Intent(this,LayerDrawableActivity.class));
+
+    /**
+     * 层次
+     * @param view
+     */
+    public void layerDrawable(View view) {
+        startActivity(new Intent(this, LayerDrawableActivity.class));
     }
-    public void levelDrawable(View view){
-        startActivity(new Intent(this,LevelListDrawableActivity.class));
+
+    /**
+     * 在level范围内的显示
+     * @param view
+     */
+    public void levelDrawable(View view) {
+        startActivity(new Intent(this, LevelListDrawableActivity.class));
+
+    }
+
+    /**
+     * 有过渡动画的Drawabe
+     * @param view
+     */
+    public void transitionDrawable(View view) {
+        startActivity(new Intent(this, TransitionDrawableActivity.class));
+
+    }
+
+    /**
+     * 四周有padding的Drawable
+     * @param view
+     */
+    public void insertDrawable(View view) {
+        startActivity(new Intent(this, InsertDrawableActivity.class));
+
+    }
+
+    /**
+     * 用来裁剪的Drawable
+     */
+    public void clipDrawable(View view) {
+        startActivity(new Intent(this, ClipDrawableActivity.class));
 
     }
 }

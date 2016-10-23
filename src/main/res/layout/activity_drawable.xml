@@ -24,4 +24,24 @@
         android:layout_marginTop="20dp"
         android:onClick="levelDrawable"
         android:text="LevelDrawable" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="transitionDrawable"
+        android:text="TransitionDrawable" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="insertDrawable"
+        android:text="InsertDrawable" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="clipDrawable"
+        android:text="ClipDrawable" />
 </LinearLayout>

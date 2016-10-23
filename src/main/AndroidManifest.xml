@@ -49,6 +49,18 @@
             android:name=".drawable.LevelListDrawableActivity"
             android:screenOrientation="portrait">
         </activity>
+        <activity
+            android:name=".drawable.TransitionDrawableActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".drawable.InsertDrawableActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".drawable.ClipDrawableActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <!-- 高德地图 AMapActivity-->
         <activity
             android:name=".map.AMapActivity"
