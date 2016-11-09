@@ -1,6 +1,6 @@
 # android-base
 安卓基础知识案例
-## 高德地图使用
+## 一.高德地图使用
 #### 包com.keaven.android.base.map
 
 ## 各种Drawable使用
@@ -47,4 +47,27 @@ CLAMP  ：如果渲染器超出原始边界范围，会复制范围内边缘染�
 REPEAT ：横向和纵向的重复渲染器图片，平铺。
 MIRROR ：横向和纵向的重复渲染器图片，这个和REPEAT 重复方式不一样，他是以镜像方式平铺。
 
+## 三.应用自动更新
+#### 包com.keaven.android.base.update
 
+## 四.WebView js交互
+#### 包com.keaven.android.base.webview
+参考：
+JS调用Android里面的方法，Android调用JS里面的方法
+http://blog.csdn.net/hj563308597/article/details/45197709
+
+http://blog.csdn.net/beyond0525/article/details/9374301
+
+跟webview相关：WebChromeClient，WebViewClient，WebSettings（查找资料）
+
+关于android WebViewClient和WebChromeClient
+http://blog.csdn.net/jackyhuangch/article/details/8310033
+WebChromeClient：
+
+好好和h5沟通！几种常见的hybrid通信方式
+http://zjutkz.net/2016/04/17/%E5%A5%BD%E5%A5%BD%E5%92%8Ch5%E6%B2%9F%E9%80%9A%EF%BC%81%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84hybrid%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/
+内容概要：
+1、原生方式
+2、JSBridge
+3、
+4、
