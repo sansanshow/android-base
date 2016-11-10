@@ -75,7 +75,7 @@
         </activity>
         <!-- webview -->
         <activity
-            android:name=".webview.JSBridgeActivity"
+            android:name=".webview.jsbridge.JSBridgeActivity"
             android:screenOrientation="portrait">
         </activity>
         <!-- webview -->

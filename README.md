@@ -71,3 +71,13 @@ http://zjutkz.net/2016/04/17/%E5%A5%BD%E5%A5%BD%E5%92%8Ch5%E6%B2%9F%E9%80%9A%EF%
 2、JSBridge
 3、
 4、
+##### JsBridge交互实现
+参考： http://blog.csdn.net/sbsujjbcy/article/details/50752595
+自定义WebChromeClient并实现onJsPrompt方法，拦截html 中的prompt(arg0,arg1)方法，来实现js向原生方法的通信！
+核心方法
+ WebSettings settings = mWebView.getSettings();
+ settings.setJavaScriptEnabled(true);
+ mWebView.setWebChromeClient(new JSBridgeWebChromeClient());
+ mWebView.loadUrl("file:///android_asset/index.html");
+ JSBridge.register("bridge", BridgeImpl.class);//
+

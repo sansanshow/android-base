@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.keaven.android.base.drawable.DrawableActivity;
 import com.keaven.android.base.mediarecoder.MediaRecordActivity;
-import com.keaven.android.base.webview.JSBridgeActivity;
+import com.keaven.android.base.webview.jsbridge.JSBridgeActivity;
 import com.keaven.android.base.webview.WebViewActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener {

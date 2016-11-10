@@ -10,7 +10,6 @@ import android.webkit.WebView;
 
 public class InjectedChromeClient extends WebChromeClient {
     JsCallJava mJsCallJava;
-
     public InjectedChromeClient() {
         this.mJsCallJava = new JsCallJava();
     }
