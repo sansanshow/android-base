@@ -2,14 +2,23 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
-
+    buildToolsVersion "23.0.3"
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.keaven.android.base"
         minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        ndk{
+            moduleName "jnibase"
+        }
+    }
+    sourceSets.main {
+        // 你的.so库的实际路径
+        jniLibs.srcDirs = ['libs']
     }
     buildTypes {
         release {
@@ -18,7 +27,11 @@ android {
         }
     }
 }
-
+repositories {
+    maven {
+        url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories"
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
@@ -27,4 +40,6 @@ dependencies {
     compile 'com.tencent.tinker:tinker-android-anno:1.6.2'
     compile 'com.tencent.tinker:tinker-android-lib:1.6.2'
     compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile files('libs/library-1.0.19.jar')
+    compile 'com.taobao.android:alisdk-hotfix:1.4.0'
 }

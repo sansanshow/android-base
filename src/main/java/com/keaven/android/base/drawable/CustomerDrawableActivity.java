@@ -32,5 +32,6 @@ public class CustomerDrawableActivity extends Activity {
         mImageViewRound = (ImageView) findViewById(R.id.iv_round);
         Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.round_proc);
         mImageViewRound.setImageDrawable(new RoundDrawable(bitmap2));
+        mImageViewRound.setAlpha(18);
     }
 }

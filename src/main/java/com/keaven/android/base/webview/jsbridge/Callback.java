@@ -1,5 +1,6 @@
 package com.keaven.android.base.webview.jsbridge;
 
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.webkit.WebView;
@@ -25,11 +26,13 @@ public class Callback {
 
     public void apply(JSONObject jsonObject) {
         final String execJs = String.format(CALLBACK_JS_FORMAT, mPort, String.valueOf(jsonObject));
+//        final String  path = Environment.getExternalStorageDirectory().getAbsolutePath()+"/ione.pcm";
         if (mWebViewRef != null && mWebViewRef.get() != null) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
                     mWebViewRef.get().loadUrl(execJs);
+//                    mWebViewRef.get().postUrl(execJs,BridgeImpl.getVoice(path));
                 }
             });
 

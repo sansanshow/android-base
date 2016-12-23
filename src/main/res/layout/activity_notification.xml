@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification消息通知栏使用" />
+
+
+    <Button
+        android:id="@+id/btn_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="显示通知消息（默认）" />
+
+    <TextView
+        style="@style/text_tips"
+        android:text="tips:系统默认使用方式" />
+
+    <Button
+        android:id="@+id/btn_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="显示通知消息（自定义）" />
+
+    <TextView
+        style="@style/text_tips"
+        android:text="tips:自定义通知栏样式" />
+
+    <Button
+        android:id="@+id/btn_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="显示通知消息（后台启动）" />
+
+    <TextView
+        style="@style/text_tips"
+        android:text="tips:后台启动service,等待BroadCastReceiver消息，通知栏显示" />
+</LinearLayout>

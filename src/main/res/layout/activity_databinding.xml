@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="event"
+        type="com.keaven.android.base.databinding.IndexDataBindingActivity.Event"/>
+</data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_simple"
+            style="@style/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{event::simple}"
+            android:text="基本使用" />
+
+        <Button
+            android:id="@+id/btn_list"
+            style="@style/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{event::list}"
+            android:text="列表" />
+
+        <Button
+            android:id="@+id/btn_custom"
+            style="@style/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{event::custom_property}"
+            android:text="自定义属性" />
+    </LinearLayout>
+</layout>

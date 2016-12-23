@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import
+            alias="User"
+            type="com.keaven.android.base.databinding.User" />
+
+        <import type="com.keaven.android.base.databinding.Student" />
+
+        <import type="com.keaven.android.base.databinding.Employee" />
+        <variable
+            name="list"
+            type="android.databinding.ObservableArrayList&lt;User>"/>
+        <variable
+            name="stud"
+            type="Student" />
+
+        <variable
+            name="user"
+            type="User" />
+
+        <variable
+            name="employee"
+            type="Employee" />
+
+        <variable
+            name="otheruser"
+            type="User" />
+
+        <import
+            alias="Presenter"
+            type="com.keaven.android.base.databinding.BindingDemoActivity.Presenter" />
+
+        <variable
+            name="presenter"
+            type="Presenter" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:onTextChanged="@{presenter::onTextChanged}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DataBinding使用" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="方法绑定" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:onTextChanged="@{presenter::onTextChanged}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:onTextChanged="@{presenter::onTextChanged}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{user.lastName}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{user.firstName}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="监听器绑定绑定" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:onTextChanged="@{presenter::onTextChanged}" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:onTextChanged="@{presenter::onTextChanged}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{otheruser.lastName}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{otheruser.firstName}" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observable使用示例"
+                android:textSize="18dp" />
+
+            <TextView
+                style="@style/text_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="继承BaseObservable" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{stud.name}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text='@{String.valueOf(stud.gender)}' />
+
+            <TextView
+                style="@style/text_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ObservableFields家族" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{employee.name}" />
+
+            <EditText
+                android:id="@+id/changeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:afterTextChanged="@{presenter::changeName}"
+                android:text="@{stud.name}" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{list[0].firstName}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{list[1].firstName}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{list[2].firstName}"/>
+            <include
+                bind:anotheruser="@{user}"
+                layout="@layout/activity_include" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

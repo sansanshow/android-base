@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:overrideLibrary="com.tencent.tinker.lib"
     package="com.keaven.android.base">
+    <!--声明权限-->
+    <permission android:name="com.keaven.android.base.BROADCAST" android:protectionLevel="normal"/>
+    <!--添加权限-->
+    <uses-permission android:name="com.keaven.android.base.BROADCAST"/>
     <!--用于进行网络定位-->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -20,7 +24,9 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
+        android:name=".BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -83,9 +89,125 @@
             android:name=".mediarecoder.MediaRecordActivity"
             android:screenOrientation="portrait">
         </activity>
+        <!-- 网络请求volley -->
+        <activity
+            android:name=".volley.VolleyActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- volley 图片请求 -->
+        <activity
+            android:name=".volley.MovieActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- Jni -->
+        <activity
+            android:name=".jni.JniActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- BroadCast -->
+        <activity
+            android:name=".broadcast.BroadCastActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <receiver android:name=".broadcast.MyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.FirstReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.SecondReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".broadcast.ThirdReceiver">
+            <intent-filter android:priority="998">
+                <action android:name="android.intent.action.MY_BROADCAST"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Provider -->
+        <activity
+            android:name=".contentprovider.ProviderActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--Notification 通知栏消息-->
+        <activity android:name=".notification.NotificationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--Service 服务-->
+        <activity android:name=".service.ServiceActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- 自定义View -->
+        <activity android:name=".view.CustomViewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- 自定义折线图 -->
+        <activity android:name=".view.LineViewActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- 阿里支付 -->
+        <activity android:name=".alipay.AlipayActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--alipay 必须添加-->
+        <!--<activity-->
+            <!--android:name="com.alipay.sdk.app.H5PayActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+            <!--android:exported="false"-->
+            <!--android:screenOrientation="behind" >-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="com.alipay.sdk.auth.AuthActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+            <!--android:exported="false"-->
+            <!--android:screenOrientation="behind" >-->
+        <!--</activity>-->
         <!-- 高德地图 AMapActivity-->
         <activity
             android:name=".map.AMapActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <!-- DataBinding -->
+        <activity
+            android:name=".databinding.BindingDemoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".databinding.IndexDataBindingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".databinding.ListActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".recyclerview.RecyclerViewDemoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".recyclerview.FeedListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".recyclerview.Demo1Activity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".recyclerview.GridLayoutActivity"
             android:screenOrientation="portrait">
         </activity>
         <service android:name="com.amap.api.location.APSService">
@@ -95,6 +217,13 @@
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="1769324beb4fe37c2268621c1c04c5a3" />
+        <!-- HotFix -->
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="9cd82c7292a752023e1ee02f2cc96c8c" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEugIBADANBgkqhkiG9w0BAQEFAASCBKQwggSgAgEAAoIBAQCPcf3bIj2q19un1rJyOq9sWD6tHawLgWPKWEzWYQLPU5+lmekHPAsImQaVl/0YnzotDFhPmz3TpynsBn8TnedY6xNyOZDP25l5UNLSpMRzsXs9X1/b1l5IK1pe77VZ9cK1D9C2xUhoqqA5nlirW8gT/JKWRiYJuN/+kHPk0VZzbBomPNX1/KeslB1hjqFGYD/OBo0lEiLvFseJcWEvkuG40TZv0d5rUl76K2I+wqaehgLf0tbaj+EYSyxTJ1ORF1yiumVTEegp0LlFmklq1jLbzLUJS6A0IbnISKPw5WFVx3VUeLFhHCXpnWi6M/+69f5rmHDgrmymciICe8+K5dCTAgMBAAECggEALO044t8wjUeaJlEaBqjWtIpW5wV6EwhtZryNJD+yD5lTURyJXZiyo/i5lTTLMmD8aYuKRTSMArRCbwgB2PUFtlW5+3aIInHW+aYUwaCVXt7hiHFMpp/XW6coYL+W/xv35ZmUdwoHCbEXCbTMdK8EVS4wAxzpYPYkQaigg7QE7ZUeLe4B5AjBgPU/1l61ztY+d9acLWPr9GmrKYUz4DqTigXwekdNKejhLEgnK0yHlR+U5+jNmWSLf7SYoPpOfn2KCdDUizWFUgsZ67YnJBcXsLR9bKWAfpOB0BX32xzSW9hsLBhBdttVuwoBWHns1lYcrHeRxursRQw1V38wMzdMQQKBgQDjxx2NIjlOjXt5SmOR0SpeKRtCMwi/5M3Sy3Ypx1FJ8Z9AJWPntpr2LaatQtimwVG6r0hF9OfFdsdMRqwgzthhqSSq+L68tF6iiH1XQhJRXb1ep3fcag+cADUBSBQd5vhygHOHc8ekJW6CexotzOwhD7OIHuvHesFMR12r9dfgQwKBgQChN+7SEYQruh0YlWcfjWfNkDPBOtJrJI5BdHeFEJ9V0ZpyNa3NYjOEX1jWXaxaFzv9Q6bokp3LgfwZ2WjFccBbsNZg1BNbQcGpGY302aPUn7UDgQumZ4RhPDGRolk289mcrRosDvHSOx6OaaoUYJgoTvH6D9nnMp6Faj4lWSUxcQJ/EAPwD/xYCy3ngJ+6YIZUdEpvoDf2ZYew8SFdLZLWJFzY1anLXH96ZdTP417P3Om61WV9r22I3ll7qeFOOQBSNouuCFd1Ec+c19DA/2Gl6BKvPfiIdPcAIffhwjVPNMsIrQRbGysI3oHDQ2lkbdP6xlhURz3lViFLdhGOhIjEpQKBgGisfzQHSXB2o2ONxWnYDtiJ0wCXp30HPBHFg8BynXFD6OpUbecW5moA2hY8taW8xidXIGyKnUc/uyYxYXQougMOWvJ9X5/1nr6jJ+cc0+E+XHHM/HprZakYQvrSlOg4BUdToNWQUnP0DI/cjSAz4zbwou2AEzOoSwJGi9kF+z8RAoGAPsdSYIkpapx+QImbi6LIZZdD95qzQ+SbPx5UzTVB55g9iBf+jpUrEDNdJz9oU4Kma+v3Aja5eh2gXB84kPW/kyqeqHwkCXrs1I2D0Mdr9e2RVR1Z+Qz8xti8A/EzRa67T0c5YlJgeaFTzoIVnlIxvhnByZhhDG8YhZJbjV6MAeU=" />
     </application>
 
 </manifest>
