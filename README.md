@@ -100,7 +100,7 @@ Data Binding插件将会在你的项目内添加必需提供的以及编译配�
 1,Data Binding Layout文件
 起始跟标签是<layout>……</layout>
 接下来一个data元素以及一个view的根元素。这个view元素就是你没有使用Data Binding的layout文件的根元素。举例说明activity_demo.xml如下：
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
    <data>
@@ -118,8 +118,10 @@ Data Binding插件将会在你的项目内添加必需提供的以及编译配�
            android:text="@{user.lastName}"/>
    </LinearLayout>
 </layout>
+```
 2.Activity写法
 编写一个activity_demo.xml
+```
 public class BindingDemoActivity extends BaseActivity{
     User user;
     @Override
@@ -132,6 +134,7 @@ public class BindingDemoActivity extends BaseActivity{
         binding.setUser(user);
     }
 }
+```
 2,数据绑定方式：
 数据设置及表达式具体参照：
 http://blog.csdn.net/qibin0506/article/details/47393725
@@ -144,6 +147,7 @@ http://blog.csdn.net/qibin0506/article/details/47393725
 binding.firstName.setText(XXX);
 这样就将数据更新到UI视图中去了
 (2)UI绑定
+```
 <data>
        <variable name="user" type="com.example.User"/>
    </data>
@@ -153,7 +157,7 @@ binding.firstName.setText(XXX);
        <TextView android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="@{user.lastName}"/>
-
+```
 在Activity中的表现形式是：
 binding.setUser(user);
 这样数据就更新到视图中了
@@ -179,6 +183,7 @@ XXXBinding
 
 dataBinding在处理null值的时候，做了非空判断
 比如，在如下的代码中，
+```
 <data>
     <import type="com.keaven.android.base.databinding.User" alias="User" />
     <variable
@@ -191,7 +196,7 @@ dataBinding在处理null值的时候，做了非空判断
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text='@{anotheruser.lastName+}' />
-
+```
 如果在java中没有binding.setOtheruser(user)或者赋值为null,即binding.setOtheruser(null);;此时，取到的lastName的值是null。
 在databinding自动生成的文件中做了非空处理
 if (otheruser != null) {
@@ -210,6 +215,7 @@ if (otheruser != null) {
 
 参考下面示例：
 activity_demo.xml 源码：
+```
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -239,7 +245,7 @@ activity_demo.xml 源码：
             android:text="@{otheruser.firstName}" />
         <include layout="@layout/activity_include" bind:anotheruser="@{user}"/>
     </LinearLayout>
-
+```
 </layout>
 activity_include.xml内容：
 <?xml version="1.0" encoding="utf-8"?>
